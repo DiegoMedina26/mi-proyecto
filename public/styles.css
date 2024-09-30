@@ -1,0 +1,183 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8; /* Fondo claro y suave */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header and Footer */
+header, footer {
+    background-color: #004085; /* Azul corporativo oscuro */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff073a; /* Rojo corporativo */
+    text-decoration: underline;
+}
+
+/* Page Containers */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #ff073a; /* Borde rojo en la parte superior */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
+    border-color: #ff073a; /* Rojo corporativo al enfocar */
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+button {
+    background-color: #007bff; /* Azul corporativo */
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ff073a; /* Rojo corporativo al hacer hover */
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #c70039; /* Rojo más oscuro al hacer clic */
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff; /* Azul corporativo */
+    color: white;
+    padding: 12px 15px;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa; /* Fondo alternativo para filas pares */
+}
+
+tr:hover {
+    background-color: #e9ecef; /* Fondo claro al hacer hover en filas */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"], input[type="tel"], textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}

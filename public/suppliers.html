@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresas Registradas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Lista de empresas registradas en la página con vacantes en Nariño
+        const empresas = [
+            { 
+                id: 1, 
+                nombre: "Panadería La Esperanza", 
+                ubicacion: "Nariño", 
+                reseña: "Especialistas en productos de panadería y pastelería desde hace 30 años. Contamos con vacantes en el área de producción y ventas."
+            },
+            { 
+                id: 2, 
+                nombre: "Constructora Colpatria", 
+                ubicacion: "Nariño", 
+                reseña: "Líderes en la construcción de infraestructura y vivienda en Colombia. Buscamos ingenieros civiles y arquitectos para nuevos proyectos en Nariño."
+            },
+            { 
+                id: 3, 
+                nombre: "Software Solutions", 
+                ubicacion: "Nariño", 
+                reseña: "Desarrollo de soluciones tecnológicas personalizadas para pequeñas y medianas empresas. Vacantes para desarrolladores front-end y back-end."
+            },
+            { 
+                id: 4, 
+                nombre: "Rappi", 
+                ubicacion: "Nariño", 
+                reseña: "Aplicación de entrega a domicilio líder en Latinoamérica. Estamos contratando domiciliarios en toda la región de Nariño."
+            },
+            { 
+                id: 5, 
+                nombre: "Panadería Las Delicias", 
+                ubicacion: "Nariño", 
+                reseña: "Empresa familiar con más de 20 años de experiencia en la producción de panes y repostería. Vacantes disponibles en el área de producción y atención al cliente."
+            },
+            { 
+                id: 6, 
+                nombre: "Tech Innovators", 
+                ubicacion: "Nariño", 
+                reseña: "Desarrollo de software de alta calidad para empresas tecnológicas a nivel mundial. Buscamos ingenieros de software y diseñadores UX/UI."
+            },
+            { 
+                id: 7, 
+                nombre: "Universidad del Norte", 
+                ubicacion: "Nariño", 
+                reseña: "Institución educativa reconocida por su excelencia académica en Colombia. Oportunidades para docentes y administrativos."
+            },
+            { 
+                id: 8, 
+                nombre: "Grupo Aval", 
+                ubicacion: "Nariño", 
+                reseña: "Conglomerado financiero líder en servicios bancarios y seguros. Vacantes en áreas de atención al cliente y asesoría financiera."
+            },
+            { 
+                id: 9, 
+                nombre: "Fruver Los Andes", 
+                ubicacion: "Nariño", 
+                reseña: "Empresa dedicada a la comercialización de frutas y verduras frescas de alta calidad. Buscamos personal para atención en tiendas y gestión de inventarios."
+            }
+        ];
+
+        // Función para cargar y mostrar todas las empresas registradas con vacantes en Nariño
+        function mostrarEmpresas() {
+            const listaEmpresas = document.getElementById('lista-empresas');
+            listaEmpresas.innerHTML = ''; // Limpiar la lista antes de agregar empresas
+
+            empresas.forEach(empresa => {
+                const card = `
+                    <div class="empresa-card">
+                        <h3>${empresa.nombre}</h3>
+                        <p><strong>Ubicación:</strong> ${empresa.ubicacion}</p>
+                        <p><strong>Reseña:</strong> ${empresa.reseña}</p>
+                        <button onclick="verDetalles(${empresa.id})">Ver Detalles</button>
+                    </div>
+                `;
+                listaEmpresas.innerHTML += card;
+            });
+        }
+
+        // Función para ver detalles de una empresa (puede personalizarse según la lógica de la aplicación)
+        function verDetalles(id) {
+            const empresa = empresas.find(emp => emp.id === id);
+            alert(`Detalles de la empresa:\nNombre: ${empresa.nombre}\nUbicación: ${empresa.ubicacion}\nReseña: ${empresa.reseña}`);
+        }
+
+        window.onload = mostrarEmpresas; // Cargar las empresas al inicio
+    </script>
+    <style>
+        /* Estilos adicionales para la visualización de las empresas */
+        .empresa-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .empresa-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .empresa-card button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .empresa-card button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Empresas Registradas con Vacantes en Nariño</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="inventory.html">Inventario</a></li>
+                <li><a href="suppliers.html">Proveedores</a></li>
+                <li><a href="purchases.html">Compras</a></li>
+                <li><a href="sales.html">Proceso Empresas</a></li>
+                <li><a href="reports.html">Reportes</a></li>
+                <li><a href="settings.html">Configuración</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <section>
+                <h2>Lista de Empresas con Vacantes en Nariño</h2>
+                <!-- Contenedor para mostrar las tarjetas de las empresas -->
+                <div id="lista-empresas">
+                    <!-- Aquí se insertarán las tarjetas de empresas dinámicamente -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sistema de Gestión de Inventarios. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

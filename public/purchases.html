@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Empleo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Lista de vacantes de empleo
+        const vacantes = [
+            { id: 1, empresa: "Panadería La Esperanza", puesto: "Panadero", ubicacion: "Nariño", salario: "$1,200,000", descripcion: "Responsable de la producción de pan y productos de panadería." },
+            { id: 2, empresa: "Constructora Colpatria", puesto: "Ayudante de Construcción", ubicacion: "Nariño", salario: "$1,500,000", descripcion: "Asistente en obras civiles y manejo de materiales de construcción." },
+            { id: 3, empresa: "Software Solutions", puesto: "Ingeniero de Software", ubicacion: "Nariño", salario: "$4,500,000", descripcion: "Desarrollo y mantenimiento de aplicaciones web y móviles." },
+            { id: 4, empresa: "Rappi", puesto: "Domiciliario", ubicacion: "Nariño", salario: "$1,000,000 + comisiones", descripcion: "Entrega de pedidos en diferentes ubicaciones de la ciudad." },
+            { id: 5, empresa: "Panadería Las Delicias", puesto: "Ayudante de Panadería", ubicacion: "Nariño", salario: "$1,100,000", descripcion: "Asistencia en la preparación de productos de panadería." },
+            { id: 6, empresa: "Tech Innovators", puesto: "Desarrollador Full Stack", ubicacion: "Nariño", salario: "$5,000,000", descripcion: "Desarrollo de aplicaciones web full stack con tecnologías modernas." }
+        ];
+
+        // Función para buscar vacantes
+        function buscarVacantes() {
+            // Obtener el valor del input de búsqueda
+            const termino = document.getElementById('searchInput').value.toLowerCase();
+            const resultados = vacantes.filter(vacante => 
+                vacante.puesto.toLowerCase().includes(termino) ||
+                vacante.empresa.toLowerCase().includes(termino) ||
+                vacante.descripcion.toLowerCase().includes(termino)
+            );
+
+            // Actualizar la tabla de resultados
+            const tbody = document.getElementById('resultados-body');
+            tbody.innerHTML = ''; // Limpiar la tabla antes de agregar resultados
+
+            if (resultados.length > 0) {
+                resultados.forEach(vacante => {
+                    const row = `
+                        <tr>
+                            <td>${vacante.empresa}</td>
+                            <td>${vacante.puesto}</td>
+                            <td>${vacante.ubicacion}</td>
+                            <td>${vacante.salario}</td>
+                            <td>${vacante.descripcion}</td>
+                            <td><button onclick="aplicarOferta(${vacante.id})">Aplicar</button></td>
+                        </tr>
+                    `;
+                    tbody.innerHTML += row;
+                });
+            } else {
+                // Mostrar mensaje si no se encuentran vacantes
+                tbody.innerHTML = '<tr><td colspan="6">No se encontraron vacantes relacionadas.</td></tr>';
+            }
+        }
+
+        // Función para aplicar a una oferta de empleo
+        function aplicarOferta(id) {
+            let vacante = vacantes.find(vac => vac.id === id);
+            alert(`Has aplicado a la oferta de empleo en ${vacante.empresa} para el puesto de ${vacante.puesto}.`);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Buscador de Empleo</h1>
+        <nav>
+            <ul>
+                <li><a href="profile.html">Perfil</a></li>
+                <li><a href="inventory.html">Vacantes Destacadas</a></li>
+                <li><a href="suppliers.html">Empresas</a></li>
+                <li><a href="purchases.html">Buscador de empleo</a></li>
+                <li><a href="sales.html">Proceso Empresas</a></li>
+                <li><a href="reports.html">Reportes</a></li>
+                <li><a href="settings.html">Configuración</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <section>
+                <h2>Buscar Empleo</h2>
+                <!-- Input para buscar vacantes -->
+                <div class="form-group">
+                    <label for="searchInput">Buscar empleo:</label>
+                    <input type="text" id="searchInput" placeholder="Ejemplo: panadero, ingeniero, domiciliario">
+                    <button type="button" onclick="buscarVacantes()">Buscar</button>
+                </div>
+            </section>
+
+            <section>
+                <h2>Resultados de la Búsqueda</h2>
+                <!-- Tabla para mostrar resultados de búsqueda -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Empresa</th>
+                            <th>Puesto</th>
+                            <th>Ubicación</th>
+                            <th>Salario</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultados-body">
+                        <!-- Aquí se insertarán las filas de la tabla con los resultados de la búsqueda -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Portal de Vacantes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

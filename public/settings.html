@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración General</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Configuración General</h1>
+        <nav>
+            <ul>
+                <li><a href="profile.html">Perfil</a></li>
+                <li><a href="inventory.html">Vacantes Destacadas</a></li>
+                <li><a href="suppliers.html">Empresas</a></li>
+                <li><a href="purchases.html">Buscador de empleo</a></li>
+                <li><a href="sales.html">Proceso Empresas</a></li>
+                <li><a href="reports.html">Reportes</a></li>
+                <li><a href="settings.html">Configuración</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <!-- Configuración de Empresa -->
+            <section>
+                <h2>Datos de la Empresa</h2>
+                <form id="companyForm">
+                    <div class="form-group">
+                        <label for="companyName">Nombre de la Empresa:</label>
+                        <input type="text" id="companyName" name="companyName" value="Mi Empresa S.A." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="companyEmail">Correo Electrónico:</label>
+                        <input type="email" id="companyEmail" name="companyEmail" value="info@miempresa.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="companyPhone">Teléfono:</label>
+                        <input type="tel" id="companyPhone" name="companyPhone" value="+34 600 123 456" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="companyAddress">Dirección:</label>
+                        <input type="text" id="companyAddress" name="companyAddress" value="Calle Falsa 123, Ciudad, País" required>
+                    </div>
+                    <button type="submit">Guardar Cambios</button>
+                </form>
+            </section>
+
+            <!-- Gestión de Usuarios -->
+            <section>
+                <h2>Gestión de Usuarios</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre de Usuario</th>
+                            <th>Rol</th>
+                            <th>Correo Electrónico</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo de usuario -->
+                        <tr>
+                            <td>admin</td>
+                            <td>Administrador</td>
+                            <td>admin@miempresa.com</td>
+                            <td>
+                                <button type="button" onclick="editUser('admin')">Editar</button>
+                                <button type="button" onclick="deleteUser('admin')">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>usuario1</td>
+                            <td>Operador</td>
+                            <td>usuario1@miempresa.com</td>
+                            <td>
+                                <button type="button" onclick="editUser('usuario1')">Editar</button>
+                                <button type="button" onclick="deleteUser('usuario1')">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" onclick="addNewUser()">Agregar Usuario</button>
+            </section>
+
+            <!-- Configuración de Notificaciones -->
+            <section>
+                <h2>Configuración de Notificaciones</h2>
+                <form id="notificationsForm">
+                    <div class="form-group">
+                        <label for="notifyEmail">Enviar Notificaciones por Correo:</label>
+                        <input type="checkbox" id="notifyEmail" name="notifyEmail" checked>
+                    </div>
+                    <div class="form-group">
+                        <label for="notifySMS">Enviar Notificaciones por SMS:</label>
+                        <input type="checkbox" id="notifySMS" name="notifySMS">
+                    </div>
+                    <button type="submit">Guardar Preferencias</button>
+                </form>
+            </section>
+
+            <!-- Configuración del Sistema -->
+            <section>
+                <h2>Configuración del Sistema</h2>
+                <form id="systemConfigForm">
+                    <div class="form-group">
+                        <label for="systemTimezone">Zona Horaria:</label>
+                        <select id="systemTimezone" name="systemTimezone">
+                            <option value="UTC">UTC</option>
+                            <option value="CET">CET (Hora Central Europea)</option>
+                            <option value="EST">EST (Hora Estándar del Este)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="systemLanguage">Idioma del Sistema:</label>
+                        <select id="systemLanguage" name="systemLanguage">
+                            <option value="es">Español</option>
+                            <option value="en">Inglés</option>
+                        </select>
+                    </div>
+                    <button type="submit">Guardar Configuración</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sistema de Gestión de Inventarios. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Simulación de funciones de manejo de usuarios y configuración
+        function editUser(username) {
+            alert('Editando usuario: ' + username);
+        }
+
+        function deleteUser(username) {
+            if(confirm('¿Seguro que deseas eliminar el usuario ' + username + '?')) {
+                alert('Usuario ' + username + ' eliminado.');
+            }
+        }
+
+        function addNewUser() {
+            alert('Agregando nuevo usuario.');
+        }
+
+        document.getElementById('companyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Datos de la empresa guardados.');
+        });
+
+        document.getElementById('notificationsForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Preferencias de notificaciones guardadas.');
+        });
+
+        document.getElementById('systemConfigForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Configuración del sistema guardada.');
+        });
+    </script>
+</body>
+</html>

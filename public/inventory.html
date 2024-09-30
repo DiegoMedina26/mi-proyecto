@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Empleos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function aplicarOferta(empresa) {
+            alert(`Has aplicado a una oferta de empleo en ${empresa}.`);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Portal de Empleos</h1>
+        <nav>
+            <ul>
+                <li><a href="profile.html">Perfil</a></li>
+                <li><a href="inventory.html">Vacantes Destacadas</a></li>
+                <li><a href="suppliers.html">Empresas</a></li>
+                <li><a href="purchases.html">Buscador de empleo</a></li>
+                <li><a href="sales.html">Proceso Empresas</a></li>
+                <li><a href="reports.html">Reportes</a></li>
+                <li><a href="settings.html">Configuración</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <section>
+                <h2>Vacantes de Empleo</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Empresa</th>
+                            <th>Puesto</th>
+                            <th>Ubicación</th>
+                            <th>Salario</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Bimbo</td>
+                            <td>Gerente de Ventas</td>
+                            <td>Nariño</td>
+                            <td>$3,500,000</td>
+                            <td><button onclick="aplicarOferta('Bimbo')">Aplicar</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Colmotores</td>
+                            <td>Ingeniero Mecánico</td>
+                            <td>Nariño</td>
+                            <td>$4,200,000</td>
+                            <td><button onclick="aplicarOferta('Colmotores')">Aplicar</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Rappi</td>
+                            <td>Desarrollador Full Stack</td>
+                            <td>Nariño</td>
+                            <td>$5,000,000</td>
+                            <td><button onclick="aplicarOferta('Rappi')">Aplicar</button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Nestlé</td>
+                            <td>Analista de Recursos Humanos</td>
+                            <td>Nariño</td>
+                            <td>$3,000,000</td>
+                            <td><button onclick="aplicarOferta('Nestlé')">Aplicar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Manos que Construyen. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+

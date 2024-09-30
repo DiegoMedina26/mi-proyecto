@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Reportes del Sistema</h1>
+        <nav>
+            <ul>
+                <li><a href="profile.html">Perfil</a></li>
+                <li><a href="inventory.html">Vacantes Destacadas</a></li>
+                <li><a href="suppliers.html">Empresas</a></li>
+                <li><a href="purchases.html">Buscador de empleo</a></li>
+                <li><a href="sales.html">Proceso Empresas</a></li>
+                <li><a href="reports.html">Reportes</a></li>
+                <li><a href="settings.html">Configuración</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <!-- Reporte de Inventario de Materia Prima -->
+            <section>
+                <h2>Inventario Actual de Materia Prima</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Materia Prima</th>
+                            <th>Cantidad Disponible</th>
+                            <th>Unidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo de inventario de materia prima -->
+                        <tr>
+                            <td>Plástico</td>
+                            <td>5000</td>
+                            <td>kg</td>
+                        </tr>
+                        <tr>
+                            <td>Pigmento Azul</td>
+                            <td>200</td>
+                            <td>kg</td>
+                        </tr>
+                        <tr>
+                            <td>Aditivo A</td>
+                            <td>50</td>
+                            <td>litros</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Reporte de Producción Actual de las Máquinas -->
+            <section>
+                <h2>Producción Actual por Máquina</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Máquina</th>
+                            <th>Producto</th>
+                            <th>Cantidad Produciendo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo de producción de máquinas -->
+                        <tr>
+                            <td>Máquina 1</td>
+                            <td>Botellas Plásticas</td>
+                            <td>3000 unidades</td>
+                            <td>Operando</td>
+                        </tr>
+                        <tr>
+                            <td>Máquina 2</td>
+                            <td>Tapas</td>
+                            <td>5000 unidades</td>
+                            <td>En espera</td>
+                        </tr>
+                        <tr>
+                            <td>Máquina 3</td>
+                            <td>Contenedores</td>
+                            <td>1000 unidades</td>
+                            <td>Operando</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Reporte de Órdenes de Producción Más Atrasadas -->
+            <section>
+                <h2>Órdenes de Producción Más Atrasadas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Número de Orden</th>
+                            <th>Cliente</th>
+                            <th>Producto</th>
+                            <th>Fecha de Pedido</th>
+                            <th>Días de Retraso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo de órdenes atrasadas -->
+                        <tr>
+                            <td>#101</td>
+                            <td>Cliente A</td>
+                            <td>Botellas Plásticas</td>
+                            <td>01/09/2024</td>
+                            <td>10 días</td>
+                        </tr>
+                        <tr>
+                            <td>#102</td>
+                            <td>Cliente B</td>
+                            <td>Tapas</td>
+                            <td>03/09/2024</td>
+                            <td>8 días</td>
+                        </tr>
+                        <tr>
+                            <td>#103</td>
+                            <td>Cliente C</td>
+                            <td>Envases</td>
+                            <td>05/09/2024</td>
+                            <td>6 días</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sistema de Gestión de Inventarios. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Funciones dinámicas (si se requiere manipulación del DOM)
+        function updateInventory() {
+            // Simulación de actualización de inventario
+            alert('El inventario se ha actualizado.');
+        }
+
+        function updateMachineProduction() {
+            // Simulación de actualización de producción de máquinas
+            alert('El estado de producción se ha actualizado.');
+        }
+
+        function updateDelayedOrders() {
+            // Simulación de actualización de órdenes atrasadas
+            alert('Se han actualizado las órdenes de producción.');
+        }
+    </script>
+</body>
+</html>

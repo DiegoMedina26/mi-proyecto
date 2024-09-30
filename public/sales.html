@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Vacantes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Información de las vacantes
+        let vacantes = [
+            { id: 1, empresa: "Bimbo", puesto: "Gerente de Ventas", ubicacion: "Bogotá", salario: "$3,500,000", aplicantes: 10, proceso: "Entrevistas", contratados: 2 },
+            { id: 2, empresa: "Colmotores", puesto: "Ingeniero Mecánico", ubicacion: "Medellín", salario: "$4,200,000", aplicantes: 25, proceso: "Evaluación Técnica", contratados: 4 },
+            { id: 3, empresa: "Rappi", puesto: "Desarrollador Full Stack", ubicacion: "Cali", salario: "$5,000,000", aplicantes: 15, proceso: "Revisión de CV", contratados: 3 },
+            { id: 4, empresa: "Nestlé", puesto: "Analista de Recursos Humanos", ubicacion: "Barranquilla", salario: "$3,000,000", aplicantes: 12, proceso: "Entrevistas", contratados: 1 }
+        ];
+
+        // Función para aplicar a una oferta y actualizar el número de aplicantes
+        function aplicarOferta(id) {
+            let oferta = vacantes.find(vacante => vacante.id === id);
+            oferta.aplicantes += 1;
+            alert(`Has aplicado a la oferta de empleo en ${oferta.empresa} para el puesto de ${oferta.puesto}.`);
+            actualizarTabla();
+        }
+
+        // Función para actualizar la tabla de vacantes
+        function actualizarTabla() {
+            const tbody = document.getElementById('vacantes-body');
+            tbody.innerHTML = ''; // Limpiar la tabla
+
+            vacantes.forEach(vacante => {
+                const row = `
+                    <tr>
+                        <td>${vacante.empresa}</td>
+                        <td>${vacante.puesto}</td>
+                        <td>${vacante.ubicacion}</td>
+                        <td>${vacante.salario}</td>
+                        <td>${vacante.aplicantes}</td>
+                        <td>${vacante.proceso}</td>
+                        <td>${vacante.contratados}</td>
+                        <td><button onclick="aplicarOferta(${vacante.id})">Aplicar</button></td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+
+        // Función para mostrar un mensaje de contacto
+        function contactClient(clientEmail) {
+            alert("Contactando a: " + clientEmail);
+        }
+    </script>
+</head>
+<body onload="actualizarTabla()">
+    <header>
+        <h1>Portal de Vacantes</h1>
+        <nav>
+            <ul>
+                <li><a href="profile.html">Perfil</a></li>
+                <li><a href="inventory.html">Vacantes Destacadas</a></li>
+                <li><a href="suppliers.html">Empresas</a></li>
+                <li><a href="purchases.html">Buscador de empleo</a></li>
+                <li><a href="sales.html">Proceso Empresas</a></li>
+                <li><a href="reports.html">Reportes</a></li>
+                <li><a href="settings.html">Configuración</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <section>
+                <h2>Vacantes de Empleo</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Empresa</th>
+                            <th>Puesto</th>
+                            <th>Ubicación</th>
+                            <th>Salario</th>
+                            <th>Aplicantes</th>
+                            <th>Proceso de Selección</th>
+                            <th>Contratados</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vacantes-body">
+                        <!-- Aquí se insertarán las filas de la tabla dinámicamente -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Estadísticas de Vacantes</h2>
+                <p>Total de Vacantes Publicadas: <span id="totalVacantes">4</span></p>
+                <p>Aplicantes Totales: <span id="totalAplicantes">62</span></p>
+                <p>Vacantes Completadas: <span id="vacantesCompletadas">10</span></p>
+            </section>
+
+            <section>
+                <h2>Listado de Empresas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Empresa</th>
+                            <th>Correo de Contacto</th>
+                            <th>Teléfono</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo de Empresa -->
+                        <tr>
+                            <td>Bimbo</td>
+                            <td>contacto@bimbo.com</td>
+                            <td>+57 1 8000 123 456</td>
+                            <td>
+                                <button type="button" onclick="contactClient('contacto@bimbo.com')">Contactar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Colmotores</td>
+                            <td>rrhh@colmotores.com</td>
+                            <td>+57 4 8000 789 123</td>
+                            <td>
+                                <button type="button" onclick="contactClient('rrhh@colmotores.com')">Contactar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sistema de Gestión de Inventarios. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
